@@ -81,7 +81,6 @@ analytics.reset = function () {
 };
 
 analytics.add = function (key, value) {
-  debug('analytics add', key, value);
   if (metadata[key]) {
     if (!Array.isArray(metadata[key])) {
       metadata[key] = [metadata[key]];

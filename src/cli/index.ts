@@ -56,6 +56,8 @@ async function handleError(args, error) {
       delete error.message.vulnerabilities;
     }
     analytics.add('error-message', error.message);
+    // Note that error.stack would also contain the error message
+    // (see https://nodejs.org/api/errors.html#errors_error_stack)
     analytics.add('error', error.stack);
     analytics.add('error-code', error.code);
     analytics.add('command', args.command);
